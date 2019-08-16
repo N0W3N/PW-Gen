@@ -14,7 +14,6 @@ def generate_pw(charset):
 
     pw_new = ''.join(password)
     print(pw_new)
-    return pw_new
 
 def main():
     stub = password_char()
@@ -22,6 +21,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
