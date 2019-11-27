@@ -1,23 +1,28 @@
-import string
-import secrets
+from string import ascii_letters as al
+from string import digits as digits
+from string import punctuation as punctuation
+from secrets import choice as choice
+
 
 def password_char():
-    charset = string.ascii_letters + string.digits + '!"§$%&/()=?´^{[]}\/+#-.,;:_*/<>'
 
-    return charset
+    """generate a list of all letters (a-z / A-Z, digits (1-10) and special characters"""
+
+    return (al + digits + punctuation)
+
 
 def generate_pw(charset):
-    password = []
 
-    for c in range(40):
-        password += secrets.choice(charset)
+    """ Using list comprehension to generate a 40-characters password with the information of password_char()"""
 
-    pw_new = ''.join(password)
-    print(pw_new)
+    return(''.join((choice(charset) for _ in range(40))))
+
 
 def main():
     stub = password_char()
-    generate_pw(stub)
+    password = generate_pw(stub)
+    print(password)
+
 
 if __name__ == "__main__":
     main()

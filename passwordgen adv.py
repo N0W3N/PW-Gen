@@ -1,18 +1,20 @@
 import string
-import secrets
+from secrets import choice as choice
 import os
 
 """This little password generator creates 10 different passwords and saves them into a textfile on your Desktop. This amount can be changed by editing the 'numbers = x' variable in password_gen."""
 
+
 def password_opt():
     chars = string.ascii_letters
     chars2 = string.digits
-    chars3 = '!"§$%&/()=?´^{[]}\/+#-.,;:_*/<>'
+    chars3 = string.punctuation
     chars4 = string.ascii_lowercase
     chars5 = string.ascii_uppercase
     chars6 = chars + chars2 + chars3 + chars4 + chars5
 
-    print("What characters should the password contain? lower & uppercase letters (1), numbers (2), symbols (3) lowercase letters (4), uppercase letters (5), all mixed (6)?\n")
+    print(
+        "What characters should the password contain? lower & uppercase letters (1), numbers (2), symbols (3) lowercase letters (4), uppercase letters (5), all mixed (6)?\n")
 
     while True:
         try:
@@ -33,6 +35,7 @@ def password_opt():
         except ValueError:
             print("You haven't entered a number. Please try again\n")
 
+
 def password_len():
     while True:
         try:
@@ -41,23 +44,25 @@ def password_len():
         except ValueError:
             print("Please enter a number.\n")
 
+
 def password_gen(length, select):
     numbers = 10
-    fileout = (os.path.expanduser("~") + "\Desktop\pw.txt") ## just change the filepath if you prefer to save the file on another location
+    fileout = (os.path.expanduser("~") + "\Desktop\pw.txt")
     for x in range(numbers):
         pw = ""
         for c in range(length):
-            pw += secrets.choice(select)
+            pw += choice(select)
         print(pw)
         with open(fileout, "a+") as output:
             output.write(pw + "\n")
-        output.close()
     print('File has been written to', fileout)
+
 
 def main():
     options = password_opt()
     length = password_len()
     password_gen(length, options)
+
 
 if __name__ == "__main__":
     main()
