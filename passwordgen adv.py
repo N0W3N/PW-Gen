@@ -55,7 +55,7 @@ def password_gen(length, select):
         print(pw)
         with open(fileout, "a+") as output:
             output.write(pw + "\n")
-    print('File has been written to', fileout)
+    print(f'File has been written to {fileout}')
 
 
 def main():

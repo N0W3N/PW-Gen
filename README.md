@@ -18,7 +18,7 @@ or
 
 1) download and unzip the package to your preferred path
 
-2) change `[50] fileout = (os.path.expanduser("~") + "\Desktop\pw.txt")` in passwordgen adv.py to your own path if needed
+2) change `[50] fileout = (os.path.expanduser("~") + "\Desktop\pw.txt")` in passwordgen adv.py to your own path
 
 # Usage
 
