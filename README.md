@@ -1,4 +1,4 @@
-#S&A Passwordgenerator
+# S&A Passwordgenerator
 ==================
 S&A were my first newbie projects in Python and something I did use a lot before migrating to "real" password managers.
 
